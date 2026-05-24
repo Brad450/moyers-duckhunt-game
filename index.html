@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Moyers Duck Hunt, a browser arcade game for Moyers Firearms."
+    />
+    <title>Moyers Duck Hunt</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="loadingScreen" class="loading-screen" aria-live="polite">
+        <img src="/assets/moyers-logo.png" alt="Moyers Firearms LLC" />
+        <strong>Loading Moyers Duck Hunt</strong>
+      </div>
+
+      <div class="hud hud-top">
+        <section class="hud-panel score-panel">
+          <span class="hud-label">Score</span>
+          <strong id="score">0</strong>
+          <small>High <span id="highScore">0</span></small>
+        </section>
+        <img class="hud-logo" src="/assets/moyers-logo.png" alt="Moyers Firearms LLC" />
+        <section class="hud-panel round-panel">
+          <span class="hud-label">Round</span>
+          <strong><span id="round">1</span> / 5</strong>
+          <small>Misses <span id="escaped">0</span> / <span id="missLimit">5</span></small>
+        </section>
+      </div>
+
+      <canvas id="gameCanvas" aria-label="Moyers Duck Hunt game field"></canvas>
+
+      <div class="hud hud-left" aria-live="polite">
+        <section class="hud-panel ammo-panel">
+          <span class="hud-label">Ammo</span>
+          <div id="shells" class="shells"></div>
+          <strong id="ammoText">6 / 6</strong>
+        </section>
+        <section class="hud-panel loadout-panel">
+          <span class="hud-label">Today's Loadout</span>
+          <p>Arcade scattergun</p>
+          <p>Marsh pattern</p>
+          <p class="stamp">Made in America</p>
+        </section>
+      </div>
+
+      <div class="hud hud-bottom">
+        <section class="hud-strip">
+          <div>
+            <span class="hud-label">Hit Streak</span>
+            <strong id="streak">0</strong>
+          </div>
+          <div>
+            <span class="hud-label">Next Reward</span>
+            <strong id="nextReward">5 Streak</strong>
+          </div>
+          <div>
+            <span class="hud-label">Round Goal</span>
+            <strong><span id="roundHits">0</span> / <span id="roundGoal">10</span></strong>
+          </div>
+        </section>
+      </div>
+
+      <button id="muteButton" class="icon-button" type="button" aria-label="Toggle sound">Sound On</button>
+
+      <div id="overlay" class="overlay">
+        <div class="menu-card">
+          <img src="/assets/moyers-logo.png" alt="Moyers Firearms LLC" />
+          <h1>Moyers Duck Hunt</h1>
+          <p>Classic arcade marsh shooting with streaks, bonus birds, and local high scores.</p>
+          <div class="mode-select" aria-label="Game modes">
+            <button class="mode-button active" type="button">Arcade</button>
+            <button class="mode-button locked" type="button" disabled>Timed</button>
+            <button class="mode-button locked" type="button" disabled>Clay Shoot</button>
+          </div>
+          <button id="startButton" class="primary-button" type="button">Press Start</button>
+          <div class="menu-stats">
+            <span>High Score</span>
+            <strong id="menuHighScore">0</strong>
+          </div>
+          <p id="endSummary" class="end-summary"></p>
+          <a id="ctaButton" class="cta-button" href="https://www.moyersfirearms.com/" target="_blank" rel="noopener">Visit Moyers Firearms</a>
+        </div>
+      </div>
+
+      <div id="message" class="message" aria-live="polite"></div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
