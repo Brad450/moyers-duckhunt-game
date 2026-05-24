@@ -2,7 +2,7 @@ import { MoyersDuckHunt } from "./game.js";
 
 const params = new URLSearchParams(window.location.search);
 const isEmbed = params.get("embed") === "1" || document.body.dataset.forceEmbed === "true";
-const defaultCtaUrl = "https://www.moyersfirearms.com/";
+const defaultCtaUrl = "https://moyersfirearmsllc.com/";
 const ctaUrl = params.get("cta") || defaultCtaUrl;
 const assetUrls = [
   "/assets/moyers-logo.png",
